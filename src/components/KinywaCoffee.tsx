@@ -151,68 +151,74 @@ export default function KinywaCoffee() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-amber-100/40 via-transparent to-stone-100/90" />
         </div>
-        <div className="max-w-6xl mx-auto px-4 py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 pt-10 pb-12 sm:pt-12 sm:pb-16">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-xl"
+            >
+                <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 text-amber-900 px-3 py-1 text-xs font-semibold">
+                Hand‑Roasted in Small Batches
+                </span>
+                <h1 className="mt-4 text-4xl sm:text-5xl font-black tracking-tight leading-[1.1] relative">
+                <span className="absolute -inset-x-6 -inset-y-2 -z-10">
+                    <img
+                    src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1600&auto=format&fit=crop"
+                    alt="Coffee cherries background"
+                    className="w-full h-full object-cover opacity-25 blur-[1px] rounded-xl"
+                    />
+                </span>
+                Bright mornings start with Kinywa.
+                </h1>
+                <p className="mt-4 text-stone-700 text-base">
+                Ethically sourced Ugandan coffees, roasted to highlight origin character. Freshly
+                prepared and served in our cafés.
+                </p>
+            </motion.div>
+
+            <motion.figure
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="mt-6 -mx-4 overflow-hidden bg-white/60 shadow-lg sm:mx-0 sm:rounded-3xl sm:border sm:border-stone-200/80"
+            >
+              <img
+                src="/coffee-pour.gif"
+                alt="Coffee being served"
+                className="h-[260px] w-full object-cover sm:h-[320px] lg:h-[360px]"
+                loading="lazy"
+              />
+              <figcaption className="px-4 py-3 text-xs text-stone-600 text-center sm:text-left">
+                A smooth pour to start the day — captured at our café.
+              </figcaption>
+            </motion.figure>
+
+            {/* Hero media: looping coffee pour (uses local assets in /public) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-xl"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-6 flex flex-col sm:flex-row gap-3"
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 text-amber-900 px-3 py-1 text-xs font-semibold">
-              Hand‑Roasted in Small Batches
-            </span>
-            <h1 className="mt-4 text-4xl sm:text-5xl font-black tracking-tight leading-[1.1] relative">
-              <span className="absolute -inset-x-6 -inset-y-2 -z-10">
-                <img
-                  src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1600&auto=format&fit=crop"
-                  alt="Coffee cherries background"
-                  className="w-full h-full object-cover opacity-25 blur-[1px] rounded-xl"
-                />
-              </span>
-              Bright mornings start with Kinywa.
-            </h1>
-            <p className="mt-4 text-stone-700 text-base">
-              Ethically sourced East African coffees, roasted to highlight origin character. Freshly
-              prepared and served in our cafés.
-            </p>
-
-            {/* Hero media: looping coffee pour (uses local assets in /public) */}
-           <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <a
-                href="#roasts"
-                className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 text-sm font-semibold text-stone-900 shadow-sm transition hover:bg-amber-300"
-              >
-                Explore our roasts
-              </a>
-              <a
-                href="#story"
-                className="inline-flex items-center justify-center rounded-xl border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-900/90 transition hover:border-stone-400 hover:text-stone-950"
-              >
-                Learn our story
-              </a>
-            </div>
+            <a
+              href="#roasts"
+              className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 text-sm font-semibold text-stone-900 shadow-sm transition hover:bg-amber-300"
+            >
+              Explore our roasts
+            </a>
+            <a
+              href="#story"
+              className="inline-flex items-center justify-center rounded-xl border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-900/90 transition hover:border-stone-400 hover:text-stone-950"
+            >
+              Learn our story
+            </a>
           </motion.div>
-          <motion.figure
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-10 -mx-4 overflow-hidden bg-white/60 shadow-lg sm:mx-0 sm:rounded-3xl sm:border sm:border-stone-200/80"
-          >
-            <img
-              src="/coffee-pour.gif"
-              alt="Coffee being served"
-              className="h-[260px] w-full object-cover sm:h-[320px] lg:h-[360px]"
-              loading="lazy"
-            />
-            <figcaption className="px-4 py-3 text-xs text-stone-600 text-center sm:text-left">
-              A smooth pour to start the day — captured at our café.
-            </figcaption>
-          </motion.figure>
         </div>
       </section>
 
       {/* Roasts */}
-      <section id="roasts" className="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+      <section id="roasts" className="max-w-6xl mx-auto px-4 pt-8 pb-12 sm:pt-10 sm:pb-16">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Signature Roasts</h2>
         <p className="text-stone-600 mt-1 text-sm">Crafted for perfect flavor balance.</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-6">
@@ -246,7 +252,7 @@ export default function KinywaCoffee() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Our story</h2>
             <p className="mt-3 text-stone-700 text-sm leading-7">
               Kinywa means “mouth” — a celebration of conversation, community, and craft. We source from our own coffee farms 
-              and also partner with smallholder farmers across East Africa, paying premiums for quality and investing in local water
+              and also partner with smallholder farmers across Uganda, paying premiums for quality and investing in local water
               and soil programs. Each roast is profiled to honor origin and your preferred brew method.
             </p>
           </div>
