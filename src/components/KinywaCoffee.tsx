@@ -64,6 +64,11 @@ export default function KinywaCoffee() {
   const [email, setEmail] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [banner, setBanner] = React.useState(null as null | { type: "success" | "error"; text: string });
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   async function handleSubscribe(e: React.FormEvent) {
     e.preventDefault();
@@ -324,26 +329,39 @@ export default function KinywaCoffee() {
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Stay in the loop</h2>
               <p className="mt-2 text-stone-300 text-sm">News, new blends, and events — straight to your inbox.</p>
             </div>
-            <form onSubmit={handleSubscribe} className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="px-4 py-3 rounded-xl text-stone-900 placeholder-stone-400"
-                aria-label="Email address"
-                required
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-4 py-3 rounded-xl bg-amber-400 text-stone-900 text-sm font-semibold disabled:opacity-60"
+            {isMounted ? (
+              <form onSubmit={handleSubscribe} className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  className="px-4 py-3 rounded-xl text-stone-900 placeholder-stone-400"
+                  aria-label="Email address"
+                  required
+                  autoComplete="email"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="px-4 py-3 rounded-xl bg-amber-400 text-stone-900 text-sm font-semibold disabled:opacity-60"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Mail className="w-4 h-4" /> {loading ? "Subscribing…" : "Subscribe"}
+                  </span>
+                </button>
+              </form>
+            ) : (
+              <div
+                className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
+                aria-hidden="true"
+                role="presentation"
               >
-                <span className="inline-flex items-center gap-2">
-                  <Mail className="w-4 h-4" /> {loading ? "Subscribing…" : "Subscribe"}
-                </span>
-              </button>
-            </form>
+                <span className="px-4 py-3 rounded-xl bg-stone-200/70" />
+                <span className="px-4 py-3 rounded-xl bg-stone-300/70" />
+              </div>
+            )}
+            
             {banner && (
               <div
                 role="status"
