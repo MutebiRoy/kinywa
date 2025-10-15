@@ -168,20 +168,37 @@ export default function KinywaCoffee() {
             </p>
 
             {/* Hero media: looping coffee pour (uses local assets in /public) */}
-            <div className="mt-6 flex justify-center">
-                <figure className="rounded-2xl border border-stone-200 bg-white/70 shadow-sm overflow-hidden">
-                    <img
-                    src="/coffee-pour.gif"
-                    alt="Coffee being served"
-                    className="w-full h-56 sm:h-64 object-cover"
-                    loading="lazy"
-                    />
-                    <figcaption className="px-4 py-3 text-xs text-stone-600 text-center">
-                    A smooth pour to start the day — captured at our café.
-                    </figcaption>
-                </figure>
+           <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#roasts"
+                className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 text-sm font-semibold text-stone-900 shadow-sm transition hover:bg-amber-300"
+              >
+                Explore our roasts
+              </a>
+              <a
+                href="#story"
+                className="inline-flex items-center justify-center rounded-xl border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-900/90 transition hover:border-stone-400 hover:text-stone-950"
+              >
+                Learn our story
+              </a>
             </div>
           </motion.div>
+          <motion.figure
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mt-10 -mx-4 overflow-hidden bg-white/60 shadow-lg sm:mx-0 sm:rounded-3xl sm:border sm:border-stone-200/80"
+          >
+            <img
+              src="/coffee-pour.gif"
+              alt="Coffee being served"
+              className="h-[260px] w-full object-cover sm:h-[320px] lg:h-[360px]"
+              loading="lazy"
+            />
+            <figcaption className="px-4 py-3 text-xs text-stone-600 text-center sm:text-left">
+              A smooth pour to start the day — captured at our café.
+            </figcaption>
+          </motion.figure>
         </div>
       </section>
 
