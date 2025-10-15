@@ -1,7 +1,16 @@
 'use client';
 import React from "react";
 import { motion } from "framer-motion";
-import { Coffee, Leaf, Mail, MapPin, Menu, Star, Instagram, Facebook, Twitter, CheckCircle, AlertCircle } from "lucide-react";
+import { Coffee, Leaf, Mail, MapPin, Menu, Star, CheckCircle, AlertCircle } from "lucide-react";
+import { 
+  FaInstagram, 
+  FaTiktok, 
+  FaYoutube, 
+  FaFacebook,
+  FaLinkedin,
+  FaWhatsapp,
+} from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 // Kinywa Coffee — Mobile‑first landing page (informational version)
 // TailwindCSS utility classes used throughout.
@@ -393,13 +402,13 @@ export default function KinywaCoffee() {
               </p>
               <div className="mt-4 flex items-center gap-3">
                 <a aria-label="Instagram" href="#" className="hover:text-white">
-                  <Instagram className="w-5 h-5" />
+                  <FaInstagram className="w-5 h-5" />
                 </a>
                 <a aria-label="Twitter" href="#" className="hover:text-white">
-                  <Twitter className="w-5 h-5" />
+                  <FaXTwitter className="w-5 h-5" />
                 </a>
                 <a aria-label="Facebook" href="#" className="hover:text-white">
-                  <Facebook className="w-5 h-5" />
+                  <FaFacebook className="w-5 h-5" />
                 </a>
               </div>
             </div>
