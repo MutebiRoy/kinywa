@@ -219,8 +219,8 @@ export default function KinywaCoffee() {
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Our story</h2>
             <p className="mt-3 text-stone-700 text-sm leading-7">
-              Kinywa means “mouth” — a celebration of conversation, community, and craft. We partner with
-              smallholder farmers across East Africa, paying premiums for quality and investing in local water
+              Kinywa means “mouth” — a celebration of conversation, community, and craft. We source from our own coffee farms 
+              and also partner with smallholder farmers across East Africa, paying premiums for quality and investing in local water
               and soil programs. Each roast is profiled to honor origin and your preferred brew method.
             </p>
           </div>
@@ -295,7 +295,7 @@ export default function KinywaCoffee() {
             <form onSubmit={handleSubscribe} className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
               <input
                 type="email"
-                placeholder="you@coffee.com"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="px-4 py-3 rounded-xl text-stone-900 placeholder-stone-400"
@@ -338,7 +338,7 @@ export default function KinywaCoffee() {
         <div className="rounded-2xl border bg-white p-5 grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div className="sm:col-span-2">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Visit our café</h2>
-            <p className="mt-2 text-sm text-stone-700">123 Origin Lane, Los Angeles, CA</p>
+            <p className="mt-2 text-sm text-stone-700">123 Makerere Hill, Makerere, Kampala, Uganda</p>
             <a
               href="https://maps.google.com"
               className="inline-block mt-4 px-4 py-3 rounded-xl bg-stone-900 text-white text-sm font-semibold"
@@ -349,13 +349,13 @@ export default function KinywaCoffee() {
           <div className="flex flex-col gap-3">
             <div className="rounded-xl border p-3">
               <p className="text-xs text-stone-600">Hours</p>
-              <p className="text-sm">Mon–Fri: 8a–4p</p>
-              <p className="text-sm">Sat–Sun: 9a–3p</p>
+              <p className="text-sm">Mon–Fri: 8a–5p</p>
+              <p className="text-sm">Sat–Sun: 9a–4p</p>
             </div>
             <div className="rounded-xl border p-3">
               <p className="text-xs text-stone-600">Contact</p>
               <a href="mailto:hello@kinywacoffee.com" className="text-sm underline">
-                hello@kinywacoffee.com
+                hello@kinywa.com
               </a>
             </div>
           </div>
@@ -389,10 +389,10 @@ export default function KinywaCoffee() {
             <div className="space-y-2">
               <p className="text-sm font-semibold text-white">Explore</p>
               <a href="#roasts" className="text-stone-300 hover:text-white text-sm">
-                Our Roasts
+                Our Roasts | 
               </a>
               <a href="#story" className="text-stone-300 hover:text-white text-sm">
-                Our Story
+                Our Story | 
               </a>
               <a href="#sustainability" className="text-stone-300 hover:text-white text-sm">
                 Sustainability
@@ -401,10 +401,13 @@ export default function KinywaCoffee() {
             <div className="space-y-2">
               <p className="text-sm font-semibold text-white">Visit</p>
               <a href="#visit" className="text-stone-300 hover:text-white text-sm">
-                Café Location
+                Café Location | 
               </a>
-              <a href="mailto:hello@kinywacoffee.com" className="text-stone-300 hover:text-white text-sm">
+              <a href="mailto:hello@kinywa.com" className="text-stone-300 hover:text-white text-sm">
                 Contact Us
+              </a>
+              <a href="#" className="text-stone-300 hover:text-white text-sm">
+                +256 744-560954
               </a>
             </div>
           </div>
